@@ -1,4 +1,3 @@
-import React from "react";
 
 //mock data
 import { projectList } from "@/mock_data/project";
@@ -8,15 +7,14 @@ import ProjectItem from "@/components/items/ProjectItem";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
 //icons
-import { FaArrowRight } from "react-icons/fa";
-import { Card, CardContent } from "@/components/ui/card";
-import Img from "@/components/ui/Img";
+// import { FaArrowRight } from "react-icons/fa";
+// import { Card, CardContent } from "@/components/ui/card";
+// import Img from "@/components/ui/Img";
 import { FaAnglesRight } from "react-icons/fa6";
 
 const Projects = () => {

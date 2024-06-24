@@ -1,4 +1,3 @@
-import React from "react";
 
 //lib
 import { useForm } from "react-hook-form";
@@ -10,8 +9,7 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
-  FormMessage,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -31,7 +29,7 @@ const Login = () => {
     handleSubmit,
     register,
     setError,
-    formState: { errors, isSubmitting, isLoading },
+    formState: { errors, isSubmitting },
   } = form;
 
   const onSubmit = async (value: UserProps) => {

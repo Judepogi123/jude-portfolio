@@ -1,4 +1,3 @@
-import React from 'react'
 
 //lib
 import { useParams } from 'react-router-dom'

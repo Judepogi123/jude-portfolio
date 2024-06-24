@@ -1,48 +1,46 @@
-import { useState } from "react";
+//import { useState } from "react";
 
 //styles
 import { Button } from "../ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  FormControl,
-} from "../ui/form";
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogDescription,
+//   DialogHeader,
+//   DialogTitle,
+// } from "@/components/ui/dialog";
+// import {
+//   Form,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+//   FormControl,
+// } from "../ui/form";
 
 //lib
-import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+//import { useForm } from "react-hook-form";
+//import { z } from "zod";
 //props
 import { ProjectProps } from "@/interfaces/data";
 
 //icons
 import { FaBlog } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { CiCircleMore } from "react-icons/ci";
 import { CarouselItem } from "../ui/carousel";
 import { Card, CardContent } from "../ui/card";
 import Img from "../ui/Img";
 
 //schema
-const userSchema = z.object({
-  fullname: z.string(),
-  email: z.string().email(),
-});
+// const userSchema = z.object({
+//   fullname: z.string(),
+//   email: z.string().email(),
+// });
 
-type UserProps = z.infer<typeof userSchema>;
+//type UserProps = z.infer<typeof userSchema>;
 
 const ProjectItem = ({ ...props }: ProjectProps) => {
-  const [onViewFullProject, setOnViewFullProject] = useState<boolean>(false);
+ // const [onViewFullProject, setOnViewFullProject] = useState<boolean>(false);
 
   return (
     <CarouselItem className="md:basis-full lg:basis-1/3">
@@ -75,12 +73,12 @@ const ProjectItem = ({ ...props }: ProjectProps) => {
   );
 };
 
-const AccessProject = ({ type, value }: { type: string; value: string }) => {
-  const rest = value.split(":");
-  const form = useForm();
-  if (type === "full" && rest[1] === "1") {
-    return <div></div>;
-  }
-};
+// const AccessProject = ({ type, value }: { type: string; value: string }) => {
+//   const rest = value.split(":");
+//   const form = useForm();
+//   if (type === "full" && rest[1] === "1") {
+//     return <div></div>;
+//   }
+// };
 
 export default ProjectItem;

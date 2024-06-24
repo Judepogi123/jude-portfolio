@@ -1,7 +1,7 @@
-import React from "react";
+//import React from "react";
 
 //lib
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //mock_Data
 import { projectList } from "@/mock_data/project";

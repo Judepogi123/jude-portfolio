@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 //lib
 import { motion } from "framer-motion";
 //mock_data
@@ -7,7 +7,7 @@ import { featureList } from "@/mock_data/features";
 
 //styles
 import Img from "@/components/ui/Img";
-import { Separator } from "@/components/ui/separator";
+//import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/tooltip";
 
 //utils
-import { getExperience } from "@/utils/date";
+//import { getExperience } from "@/utils/date";
 
 //icons
 import { IoMdCheckmark } from "react-icons/io";

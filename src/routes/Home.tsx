@@ -4,6 +4,7 @@ import Header from "@/layout/Header";
 import Projects from "./Projects";
 import About from "./About";
 import Technologies from "./Technologies";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -21,6 +22,10 @@ const Home = () => {
       </div>
       <div className=" w-full h-auto snap-center">
         <Projects />
+      </div>
+
+      <div className=" w-full h-auto">
+        <Footer/>
       </div>
     </div>
   );

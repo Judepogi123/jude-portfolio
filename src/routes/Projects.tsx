@@ -1,4 +1,3 @@
-
 //mock data
 import { projectList } from "@/mock_data/project";
 
@@ -33,7 +32,7 @@ const Projects = () => {
 
       <div className=" w-full h-full flex flex-col gap-4 px-2 lg:px-10 ">
         <div className=" w-full">
-          <p className=" font-roboto text-base">
+          <p className=" font-roboto text-base text-[#f8f9fa]">
             Projets ({projectList.length})
           </p>
         </div>
@@ -44,16 +43,17 @@ const Projects = () => {
           className="w-full xl:p-20"
         >
           <CarouselContent>
-            {projectList.map((item, index)=> (
-             <ProjectItem key={index} {...item} />
+            {projectList.map((item, index) => (
+              <ProjectItem key={index} {...item} />
             ))}
-
           </CarouselContent>
           <CarouselPrevious className="hidden lg:flex justify-center items-center lg:ml-4" />
           <CarouselNext className="hidden lg:flex justify-center items-center lg:mr-4" />
         </Carousel>
       </div>
-      <p className=" flex md:hidden text-xs font-normal text-[#ccc] px-4 gap-2 items-center">Swipe to view other projects <FaAnglesRight/></p>
+      <p className=" flex md:hidden text-xs font-normal text-[#ccc] px-4 gap-2 items-center">
+        Swipe to view other projects <FaAnglesRight />
+      </p>
     </div>
   );
 };

@@ -68,7 +68,7 @@ const Login = () => {
                     <FormControl>
                       <Input
                         {...register("username", {
-                          required: "User is Required",
+                          required: "Username is Required",
                         })}
                         {...field}
                         placeholder="Username"

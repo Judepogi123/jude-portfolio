@@ -4,6 +4,7 @@ export interface SocMedProps {
   name: string;
   link: string;
   icon: IconType;
+  type: string
 }
 
 export interface ProjectProps {
@@ -37,4 +38,11 @@ export interface ImageProps {
   src: string;
   onLoad: boolean;
   className?: string;
+}
+
+export interface ExperienceProps {
+  title: string;
+  year: string;
+  desc: string;
+  activities: string[]
 }

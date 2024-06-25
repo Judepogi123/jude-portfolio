@@ -54,7 +54,7 @@ const ProjectItem = ({ ...props }: ProjectProps) => {
                 name={props.title}
               />
             </div>
-            <span className="lg:text-sm xl:text-sm font-semibold font-roboto text-left">
+            <span className="lg:text-sm xl:text-sm font-semibold font-roboto text-left text-ellipsis overflow-hidden">
               {props.title}
             </span>
             <div className=" w-full p-2 flex justify-end items-center gap-2">

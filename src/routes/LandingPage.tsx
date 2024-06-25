@@ -11,22 +11,33 @@ import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 
 //styles
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import CustomModal from "@/components/custom/CustomModal";
+
+//layouts
+import SendEmailForm from "@/layout/SendEmailForm";
+import RequestGitForm from "@/layout/RequestGitForm";
+
+//utils
+import { handleRedirect } from "@/utils/url";
 
 const LandingPage = () => {
   const [isError, setIsError] = useState<string | null>(null);
+  const [onOpenModal, setOnOpenModal] = useState<{
+    media: string | undefined;
+    open: boolean;
+  }>({ media: "", open: false });
   //
   const { ref, replay } = useScramble({
     text: "Hi! I am Jude Demnuvar L. Ribleza,",
     speed: 0.5,
   });
 
-  const handleRedirect = (url: string) => {
-    try {
-      window.open(url, "blank");
-      throw new Error()
-    } catch (error) {
-      setIsError(`#{error}`);
+  const handleOpenModalType = (value: string, type: 0 | 1) => {
+    const temp = value.split(":");
+    if (temp[type] === "1") {
+      return true;
     }
+    return false;
   };
 
   return (
@@ -36,9 +47,7 @@ const LandingPage = () => {
           <Alert variant="destructive">
             <ExclamationTriangleIcon className="h-4 w-4" />
             <AlertTitle>Error</AlertTitle>
-            <AlertDescription>
-              {`Sorry something went wrong.`}
-            </AlertDescription>
+            <AlertDescription>{`Sorry something went wrong.`}</AlertDescription>
           </Alert>
         </div>
       )}
@@ -73,23 +82,43 @@ const LandingPage = () => {
         </div>
       </div>
       <div className=" w-full h-[40%] bg-[#1b263b] flex lg:justify-center items-start">
-        <div className=" w-auto flex flex-col md:flex-row p-4 mt-4 gap-2 lg:gap-8">
+        <div className=" w-auto flex flex-col md:flex-row p-4 mt-4 gap-3 lg:gap-8">
           {socMedList.map((item) => (
-            <div className=" w-auto flex md:flex-row lg:flex-row items-center gap-2">
+            <div
+              className=" w-auto flex md:flex-row lg:flex-row items-center gap-2"
+              onClick={() => {
+                setOnOpenModal({ media: item.name, open: true });
+                console.log("Clicked");
+              }}
+            >
               <item.icon
                 className=" text-sm md:text-base lg:text-xl"
                 color="#f1faee"
               />
-              <a
-                onClick={() => handleRedirect(item.link)}
-                className=" font-[500] text-white text-xs lg:text-sm xl:text-lg"
-              >
+              <a className=" text-white text-xs lg:text-base xl:text-sm">
                 {item.name}
               </a>
             </div>
           ))}
         </div>
       </div>
+
+      <CustomModal
+        footer={false}
+        open={onOpenModal.open}
+        onOpenChange={() => {
+          setOnOpenModal({ media: undefined, open: false });
+        }}
+        children={
+          handleOpenModalType("1:0", 1) ? (
+            <SendEmailForm />
+          ) : (
+            <div className="">
+              <p className="">Redirect to new page?</p>
+            </div>
+          )
+        }
+      />
     </div>
   );
 };

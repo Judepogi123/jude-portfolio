@@ -20,10 +20,10 @@ const Projects = () => {
   return (
     <div className=" w-full h-full bg-[#1b263b] snap-center lg:overflow-hidden flex flex-col gap-2 p-2 pb-4">
       <div className=" w-full py-4 mt-8">
-        <p className=" text-lg lg:text-3xl font-roboto text-white ml-2 lg:ml-8">
-          Stuff I worked on...
+        <p className=" text-lg lg:text-2xl font-roboto text-white ml-2 lg:ml-8">
+          Latest stuff I worked on...
         </p>
-        <p className=" text-white ml-2 lg:ml-8 text-justify p-2 text-xs md:text-sm">
+        <p className=" text-white ml-2 lg:ml-8 text-justify p-2 text-xs md:text-sm font-roboto">
           Here are the projects I've worked on so far. Some of them were part of
           my college capstone project, others were developed during my
           internship, and a few are personal projects I've created on my own.

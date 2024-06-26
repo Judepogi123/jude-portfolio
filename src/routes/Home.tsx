@@ -13,9 +13,9 @@ const Home = () => {
       <div className=" w-full h-screen snap-center">
         <LandingPage />
       </div>
-      <div className=" w-full h-auto md:h-auto lg:h-auto xl:h-screen snap-center">
+      {/* <div className=" w-full h-auto md:h-auto lg:h-auto xl:h-screen snap-center">
         <About />
-      </div>
+      </div> */}
 
       <div className=" w-full h-auto md:h-auto lg:h-auto snap-center">
         <Technologies/>

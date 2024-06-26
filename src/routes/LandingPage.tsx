@@ -15,33 +15,28 @@ import CustomModal from "@/components/custom/CustomModal";
 
 //layouts
 import SendEmailForm from "@/layout/SendEmailForm";
-import RequestGitForm from "@/layout/RequestGitForm";
 
 //utils
 import { handleRedirect } from "@/utils/url";
+import { handleOpenModalType } from "@/utils/data";
 
 const LandingPage = () => {
   const [isError, setIsError] = useState<string | null>(null);
   const [onOpenModal, setOnOpenModal] = useState<{
     media: string | undefined;
+    link: string | undefined;
     open: boolean;
-  }>({ media: "", open: false });
+  }>({ media: undefined, link: undefined, open: false });
   //
   const { ref, replay } = useScramble({
     text: "Hi! I am Jude Demnuvar L. Ribleza,",
     speed: 0.5,
   });
 
-  const handleOpenModalType = (value: string, type: 0 | 1) => {
-    const temp = value.split(":");
-    if (temp[type] === "1") {
-      return true;
-    }
-    return false;
-  };
+  console.log(onOpenModal);
 
   return (
-    <div className=" w-full h-screen bg-[#f8f9fa] font-roboto snap-center">
+    <div className=" w-full h-full bg-[#f8f9fa] font-roboto snap-center">
       {isError !== null && (
         <div className=" w-full px-8">
           <Alert variant="destructive">
@@ -67,27 +62,68 @@ const LandingPage = () => {
               1000,
               "can be Frontend Developer or",
               1000,
-              "can be Backend Developer or",
+              "can be Backend Developer",
               1000,
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: "1.1rem", marginTop: "16px" }}
+            style={{ fontSize: "1rem", marginTop: "16px" }}
             repeat={Infinity}
             cursor={true}
           />
+          <div className=" w-full flex md:flex-row justify-center lg:hidden p-4 mt-4 gap-4 md:gap-4 lg:gap-8">
+            {socMedList.map((item) => (
+              <div
+                className=" w-auto flex md:flex-row lg:flex-row items-center gap-4 md:gap-2 cursor-pointer"
+                onClick={() => {
+                  setOnOpenModal({
+                    media: item.type,
+                    link: item.link,
+                    open: true,
+                  });
+                  console.log("Clicked");
+                }}
+              >
+                <item.icon
+                  className=" text-lg md:text-base lg:text-xl"
+                  color="#000000"
+                />
+              </div>
+            ))}
+          </div>
         </div>
         <div className=" w-[60%] h-full lg:flex flex-col justify-center items-center hidden md:hidden">
           <div className=" w-3/4 h-[70%] bg-[#1b263b]"></div>
+          <div className=" w-full flex md:flex-row p-4 mt-4 gap-3 lg:gap-6 lg:pl-20 xl:pl-28 2xl:pl-48">
+            {socMedList.map((item) => (
+              <div
+                className=" w-auto flex md:flex-row lg:flex-row items-center gap-2 cursor-pointer"
+                onClick={() => {
+                  setOnOpenModal({
+                    media: item.type,
+                    link: item.link,
+                    open: true,
+                  });
+                  console.log("Clicked");
+                }}
+              >
+                <item.icon className=" text-sm md:text-base lg:text-xl text-[#2b2d42]" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className=" w-full h-[40%] bg-[#1b263b] flex lg:justify-center items-start">
-        <div className=" w-auto flex flex-col md:flex-row p-4 mt-4 gap-3 lg:gap-8">
+        {/* <div className=" w-auto flex flex-col md:flex-row p-4 mt-4 gap-3 lg:gap-8">
           {socMedList.map((item) => (
             <div
-              className=" w-auto flex md:flex-row lg:flex-row items-center gap-2"
+              className=" w-auto flex md:flex-row lg:flex-row items-center gap-2 cursor-pointer"
               onClick={() => {
-                setOnOpenModal({ media: item.name, open: true });
+                setOnOpenModal({
+                  media: item.type,
+                  link: item.link,
+                  open: true,
+                });
                 console.log("Clicked");
               }}
             >
@@ -100,21 +136,36 @@ const LandingPage = () => {
               </a>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <CustomModal
-        footer={false}
+        onFunction={() => {
+          setOnOpenModal({ media: undefined, link: undefined, open: false });
+          handleRedirect(onOpenModal.link as string);
+        }}
+        okTitle="Confirm"
+        title={
+          handleOpenModalType(onOpenModal.media as string, 1)
+            ? "Send me an email"
+            : "Open in new tab"
+        }
+        footer={
+          !handleOpenModalType(onOpenModal.media as string, 1) ? true : false
+        }
         open={onOpenModal.open}
         onOpenChange={() => {
-          setOnOpenModal({ media: undefined, open: false });
+          setOnOpenModal({ media: undefined, link: undefined, open: false });
         }}
         children={
-          handleOpenModalType("1:0", 1) ? (
+          handleOpenModalType(onOpenModal.media as string, 1) ? (
             <SendEmailForm />
           ) : (
             <div className="">
-              <p className="">Redirect to new page?</p>
+              <p className="">
+                Redirect to{" "}
+                {handleOpenModalType(onOpenModal.media as string, 2)} page?
+              </p>
             </div>
           )
         }

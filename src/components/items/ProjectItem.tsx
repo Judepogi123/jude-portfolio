@@ -40,10 +40,10 @@ import Img from "../ui/Img";
 //type UserProps = z.infer<typeof userSchema>;
 
 const ProjectItem = ({ ...props }: ProjectProps) => {
- // const [onViewFullProject, setOnViewFullProject] = useState<boolean>(false);
+  // const [onViewFullProject, setOnViewFullProject] = useState<boolean>(false);
 
   return (
-    <CarouselItem className="md:basis-full lg:basis-1/3">
+    <CarouselItem className="md:basis-full lg:basis-1/2">
       <div className="p-1">
         <Card className=" w-full h-full">
           <CardContent className="flex flex-col justify-between aspect-square p-6">
@@ -57,6 +57,15 @@ const ProjectItem = ({ ...props }: ProjectProps) => {
             <span className="lg:text-sm xl:text-sm font-semibold font-roboto text-left text-ellipsis overflow-hidden">
               {props.title}
             </span>
+
+            <div className=" w-full h-auto grid grid-cols-3 md:grid-cols-6 lg:grid-cols-2 gap-1 py-4">
+              {props.techStack &&
+                props.techStack.map((item) => (
+                  <div className=" w-full md:w-auto px-2 py-1 bg-slate-400 text-center rounded-full">
+                    <p className=" text-[.6rem] md:text-xs text-[#0d1b2a] font-semibold font-nunito">{item}</p>{" "}
+                  </div>
+                ))}
+            </div>
             <div className=" w-full p-2 flex justify-end items-center gap-2">
               <div className=" p-2">
                 <FaBlog />

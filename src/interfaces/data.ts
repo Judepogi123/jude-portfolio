@@ -15,6 +15,7 @@ export interface ProjectProps {
   blogLink: string;
   restriction: string;
   scnShot: string[];
+  techStack?: string[]
 }
 
 export interface EducationProps {
@@ -45,4 +46,9 @@ export interface ExperienceProps {
   year: string;
   desc: string;
   activities: string[]
+}
+
+export interface ImplemetedProps {
+  icon: IconType;
+  title: string
 }

@@ -50,6 +50,7 @@ const SendEmailForm = () => {
               <FormItem>
                 <FormControl>
                   <Input
+                  className=" max-h-40"
                     {...field}
                     placeholder="Your email (e.g. XXXX@gxxx.com)"
                     {...register("email", { required: true })}
@@ -69,6 +70,7 @@ const SendEmailForm = () => {
               <FormItem>
                 <FormControl>
                   <Textarea
+                  className=" max-h-32"
                     {...field}
                     placeholder="Message content"
                     {...(register("message"),
@@ -84,7 +86,7 @@ const SendEmailForm = () => {
             )}
           />
 
-          <Button type="submit">Send</Button>
+          <Button type="submit" className=" w-full rounded-full">Send</Button>
         </form>
       </Form>
     </div>

@@ -30,13 +30,10 @@ const About = () => {
 
   return (
     <div className="w-full h-full bg-[#1b263b] flex flex-col md:flex-row sm:flex-col">
-      <motion.div
+      <div
         className={` ${
           onExtend ? "w-full flex" : "md:w-[60%]"
         } h-auto md:h-full p-4 py-4 md:py-0 lg:py-8 lg:px-28 2xl:p-44 bg-[#f8f9fa] transition ease-in-out duration-300 lg:gap-8`}
-        initial={{ x: -30, opacity: 0.7 }}
-        whileInView={{ x: 1, opacity: 1 }}
-        transition={{ duration: 0.3, ease: "backInOut" }}
       >
         <div className=" w-full h-full">
           <div className="p-1 md:p-1">
@@ -133,7 +130,7 @@ const About = () => {
             )}
           </motion.div>
         )}
-      </motion.div>
+      </div>
 
       {!value?.isSmall && !onExtend && (
         <motion.div

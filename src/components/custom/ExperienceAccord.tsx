@@ -1,13 +1,13 @@
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-  } from "@/components/ui/accordion"
-  
+//libs
+import { motion } from "framer-motion"
+//props
+interface ExperienceProps {
+
+}
 const ExperienceAccord = () => {
   return (
-    <div>ExperienceAccord</div>
+   < motion.div >
+   </motion.div>
   )
 }
 

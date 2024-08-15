@@ -30,7 +30,8 @@ interface SendEmailModalProps {
   footer?: boolean | undefined;
   onFunction?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   okTitle?: string;
-  okButtonClass?: string
+  okButtonClass?: string;
+  className?: string;
 }
 
 //libs
@@ -45,45 +46,47 @@ const CustomModal = ({
   footer,
   onFunction,
   okTitle,
-  okButtonClass
+  okButtonClass,
+  className,
 }: SendEmailModalProps) => {
-  const isMobile = useMediaQuery({ query: '(min-width: 640px)' })
-  
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
   // if (isMobile) {
   //   return (
-  //     <Drawer onOpenChange={onOpenChange} open={open} >
-  //       <DrawerTrigger>Open</DrawerTrigger>
+  //     <Drawer onOpenChange={onOpenChange} open={open}>
   //       <DrawerContent>
   //         <DrawerHeader>
   //           <DrawerTitle>Are you absolutely sure?</DrawerTitle>
   //           <DrawerDescription>This action cannot be undone.</DrawerDescription>
   //         </DrawerHeader>
-  //         <DrawerFooter>
-  //           <Button>Submit</Button>
-  //           <DrawerClose>
-  //             <Button variant="outline">Cancel</Button>
-  //           </DrawerClose>
-  //         </DrawerFooter>
+  //         <DrawerFooter></DrawerFooter>
   //       </DrawerContent>
   //     </Drawer>
   //   );
   // }
   return (
     <Dialog onOpenChange={onOpenChange} open={open}>
-      <DialogContent className=" w-full h-screen md:min-w-36 md:h-auto">
+      <DialogContent className={className}>
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle className=" font-semibold">{title}</DialogTitle>
           <DialogDescription>{desc}</DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">{children}</div>
         {footer && (
           <DialogFooter>
-            <Button className={okButtonClass} type="submit" onClick={onFunction}>{okTitle}</Button>
+            <Button
+              className={okButtonClass}
+              type="submit"
+              onClick={onFunction}
+            >
+              {okTitle}
+            </Button>
           </DialogFooter>
         )}
       </DialogContent>
     </Dialog>
   );
 };
+
 
 export default CustomModal;

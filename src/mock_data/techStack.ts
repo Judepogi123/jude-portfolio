@@ -7,6 +7,8 @@ import { TechStack } from "@/interfaces/data";
 // >> 3 = FullStack
 // >> 4 = Database
 
+//type
+
 export const techStackList: TechStack[] = [
   {
     name: "React JS",

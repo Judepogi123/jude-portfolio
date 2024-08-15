@@ -36,6 +36,8 @@ const SendEmailForm = () => {
 
   const onSubmit = async (value: EmailProps) => {
     try {
+      console.log(value);
+      
     } catch (error) {
       setError("root", { message: `Sorry something went wrong: ${error}` });
     }
@@ -53,7 +55,6 @@ const SendEmailForm = () => {
                   className=" max-h-40"
                     {...field}
                     placeholder="Your email (e.g. XXXX@gxxx.com)"
-                    {...register("email", { required: true })}
                   />
                 </FormControl>
                 <div className=" w-full h-6">
@@ -73,8 +74,6 @@ const SendEmailForm = () => {
                   className=" max-h-32"
                     {...field}
                     placeholder="Message content"
-                    {...(register("message"),
-                    { required: true })}
                   />
                 </FormControl>
                 <div className=" w-full h-6">

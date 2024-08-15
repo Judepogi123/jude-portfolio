@@ -13,6 +13,9 @@ import About from "./routes/About.tsx";
 import AllProject from "./routes/AllProject.tsx";
 import ProjectDetails from "./routes/ProjectDetails.tsx";
 import Login from "./routes/Login.tsx";
+import NotFound from "./routes/NotFound.tsx";
+import ManageUser from "./routes/ManageUser.tsx";
+import Request from "./routes/Request.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -22,7 +25,14 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
   },
-  { path: "/user", element: <UserPage /> },
+  {
+    path: "/user",
+    element: <UserPage />,
+    children: [
+      { path: "manage", element: <ManageUser /> },
+      { path: "request", element: <Request /> },
+    ],
+  },
   { path: "/about", element: <About /> },
   {
     path: "/projects",
@@ -30,6 +40,7 @@ const router = createBrowserRouter([
   },
   { path: "/projects/:projectID", element: <ProjectDetails /> },
   { path: "/login", element: <Login /> },
+  { path: "*", element: <NotFound /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

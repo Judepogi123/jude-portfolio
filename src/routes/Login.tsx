@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <div className=" w-full h-screen grid">
-      <div className=" m-auto w-full h-full md:w-[350px] md:h-[350px] rounded border p-8 bg-[#f8f9fa]">
+      <div className=" m-auto w-full h-full md:w-[350px] md:h-[400px] rounded border p-8 bg-[#f8f9fa]">
         <div className=" w-full p-4">
           <p className=" font-roboto text-2xl">Login</p>
         </div>

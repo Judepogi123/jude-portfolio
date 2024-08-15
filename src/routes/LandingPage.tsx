@@ -33,7 +33,6 @@ const LandingPage = () => {
     speed: 0.5,
   });
 
-  console.log(onOpenModal);
 
   return (
     <div className=" w-full h-full bg-[#f8f9fa] font-roboto snap-center">
@@ -113,31 +112,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className=" w-full h-[40%] bg-[#1b263b] flex lg:justify-center items-start">
-        {/* <div className=" w-auto flex flex-col md:flex-row p-4 mt-4 gap-3 lg:gap-8">
-          {socMedList.map((item) => (
-            <div
-              className=" w-auto flex md:flex-row lg:flex-row items-center gap-2 cursor-pointer"
-              onClick={() => {
-                setOnOpenModal({
-                  media: item.type,
-                  link: item.link,
-                  open: true,
-                });
-                console.log("Clicked");
-              }}
-            >
-              <item.icon
-                className=" text-sm md:text-base lg:text-xl"
-                color="#f1faee"
-              />
-              <a className=" text-white text-xs lg:text-base xl:text-sm">
-                {item.name}
-              </a>
-            </div>
-          ))}
-        </div> */}
-      </div>
+      <div className=" w-full h-[40%] bg-[#1b263b] flex lg:justify-center items-start"></div>
 
       <CustomModal
         onFunction={() => {
@@ -163,7 +138,7 @@ const LandingPage = () => {
           ) : (
             <div className="">
               <p className="">
-                Redirect to{" "}
+                Redirect to
                 {handleOpenModalType(onOpenModal.media as string, 2)} page?
               </p>
             </div>

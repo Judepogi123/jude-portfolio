@@ -52,3 +52,17 @@ export interface ImplemetedProps {
   icon: IconType;
   title: string
 }
+
+
+export interface OptionProps {
+  title: string
+  icon: IconType
+  link: string
+}
+
+export interface UserProps {
+  firstname: string;
+  lastname: string;
+  nickname?: string
+  jobTitle: string;
+}

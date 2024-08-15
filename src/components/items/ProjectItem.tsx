@@ -54,7 +54,7 @@ const ProjectItem = ({ ...props }: ProjectProps) => {
                 name={props.title}
               />
             </div>
-            <span className="lg:text-sm xl:text-sm font-semibold font-roboto text-left text-ellipsis overflow-hidden">
+            <span className=" text-xs lg:text-sm xl:text-sm font-semibold font-roboto text-left text-ellipsis overflow-hidden">
               {props.title}
             </span>
 

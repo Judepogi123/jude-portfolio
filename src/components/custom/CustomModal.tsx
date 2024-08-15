@@ -8,19 +8,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+
 
 //props
-type FooterButtonProps = {};
 interface SendEmailModalProps {
   onOpenChange?(open: boolean): void;
   open?: boolean | undefined;
@@ -35,7 +25,6 @@ interface SendEmailModalProps {
 }
 
 //libs
-import { useMediaQuery } from "react-responsive";
 
 const CustomModal = ({
   onOpenChange,
@@ -49,7 +38,6 @@ const CustomModal = ({
   okButtonClass,
   className,
 }: SendEmailModalProps) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
 
   // if (isMobile) {
   //   return (

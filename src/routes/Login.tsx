@@ -35,7 +35,6 @@ const Login = () => {
   const onSubmit = async (value: UserProps) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      throw new Error();
       console.log(value);
     } catch (error) {
       setError("username", { message: "The username is already taken!" });

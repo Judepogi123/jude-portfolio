@@ -7,10 +7,9 @@ import { OptionProps } from "@/interfaces/data";
 //layout
 import Header from "@/layout/Header";
 import Notifications from "@/layout/Notifications";
-import Home from "./Home";
 
 //icons
-import { IconBaseProps } from "react-icons";
+
 import { MdManageAccounts } from "react-icons/md";
 import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
 import { FaBlog } from "react-icons/fa";

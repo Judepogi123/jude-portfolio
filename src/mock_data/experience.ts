@@ -1,5 +1,4 @@
 import { ExperienceProps, ImplemetedProps } from "@/interfaces/data";
-import { IconBaseProps } from "react-icons";
 
 import { SiWebauthn } from "react-icons/si";
 import { TbRoute2 } from "react-icons/tb";
@@ -7,7 +6,6 @@ import { SiSimpleanalytics } from "react-icons/si";
 import { SiGoogleauthenticator } from "react-icons/si";
 import { GrDeploy } from "react-icons/gr";
 import { LuLayout } from "react-icons/lu";
-import { GrOptimize } from "react-icons/gr";
 
 export const experienceList: ExperienceProps[] = [
   {

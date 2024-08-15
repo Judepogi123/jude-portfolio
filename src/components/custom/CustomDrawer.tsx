@@ -8,7 +8,6 @@ import {
   DrawerTitle,
   DrawerDescription,
 } from "@/components/ui/drawer";
-import { Button } from "../ui/button";
 
 //props
 interface DrawerProps {

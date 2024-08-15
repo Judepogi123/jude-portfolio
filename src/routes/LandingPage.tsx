@@ -7,10 +7,10 @@ import { TypeAnimation } from "react-type-animation";
 import { socMedList } from "@/mock_data/socMed";
 
 //icons
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+//import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 
 //styles
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+//import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import CustomModal from "@/components/custom/CustomModal";
 
 //layouts
@@ -21,7 +21,7 @@ import { handleRedirect } from "@/utils/url";
 import { handleOpenModalType } from "@/utils/data";
 
 const LandingPage = () => {
-  const [isError, setIsError] = useState<string | null>(null);
+  //const [isError, setIsError] = useState<string | null>(null);
   const [onOpenModal, setOnOpenModal] = useState<{
     media: string | undefined;
     link: string | undefined;
@@ -36,7 +36,7 @@ const LandingPage = () => {
 
   return (
     <div className=" w-full h-full bg-[#f8f9fa] font-roboto snap-center">
-      {isError !== null && (
+      {/* {isError !== null && (
         <div className=" w-full px-8">
           <Alert variant="destructive">
             <ExclamationTriangleIcon className="h-4 w-4" />
@@ -44,7 +44,7 @@ const LandingPage = () => {
             <AlertDescription>{`Sorry something went wrong.`}</AlertDescription>
           </Alert>
         </div>
-      )}
+      )} */}
       <div className=" w-full h-[60%] lg:flex">
         <div className="w-full lg:w-[40%] h-full flex flex-col justify-center xl:items-end text-center lg:text-right p-4">
           <p

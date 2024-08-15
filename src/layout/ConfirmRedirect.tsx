@@ -1,8 +1,6 @@
-import React from 'react'
 
 
 //utils
-import { handleRedirect } from '@/utils/url'
 
 //props
 interface ConfirmProps {

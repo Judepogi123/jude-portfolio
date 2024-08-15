@@ -1,16 +1,12 @@
 //styles
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
-  FormMessage,
+
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 //libs
 import { useForm } from "react-hook-form";
@@ -29,12 +25,10 @@ const RequestGitForm = () => {
   const form = useForm<RequestProps>({ resolver: zodResolver(requestSchema) });
   const {
     handleSubmit,
-    setError,
-    register,
-    formState: { errors },
+
   } = form;
 
-  const onSubmit = async (value: RequestProps) => {};
+  const onSubmit = async () => {};
 
   return (
     <div className=" w-full h-auto">

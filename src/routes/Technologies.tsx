@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 //mock_data
 import { techStackList } from "@/mock_data/techStack";
-import { featureList } from "@/mock_data/features";
 import { experienceList, implemented } from "@/mock_data/experience";
 //styles
 import Img from "@/components/ui/Img";
@@ -17,11 +16,6 @@ import {
 
 //utils
 //import { getExperience } from "@/utils/date";
-
-//icons
-import { IoMdCheckmark } from "react-icons/io";
-import { IoCodeSlash } from "react-icons/io5";
-import { GoProjectRoadmap } from "react-icons/go";
 
 const Technologies = () => {
   return (
@@ -47,16 +41,6 @@ const Technologies = () => {
                         {item.title} ({item.year})
                       </p>
                     </div>
-                    {/* <p className=" text-sm font-medium font-roboto mt-2">
-                      Implemented:
-                    </p>
-                    {item.activities &&
-                      item.activities.map((act) => (
-                        <div className=" flex items-start gap-4 ml-4">
-                          <IoCodeSlash />
-                          <p className=" text-xs font-roboto">{act}</p>
-                        </div>
-                      ))} */}
                   </div>
                 </div>
               ))}

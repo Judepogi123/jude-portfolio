@@ -1,5 +1,4 @@
 //libs
-import { motion } from "framer-motion";
 //components
 import {
   AccordionContent,

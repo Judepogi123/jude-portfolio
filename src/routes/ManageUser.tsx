@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 //components
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import CustomModal from "@/components/custom/CustomModal";
 import {
